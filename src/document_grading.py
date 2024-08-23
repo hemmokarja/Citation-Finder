@@ -1,7 +1,7 @@
 import structlog
 from langchain_core.pydantic_v1 import BaseModel, Field
 
-import llm_util
+from llm_util import Assistant
 
 logger = structlog.get_logger(__name__)
 
@@ -36,7 +36,7 @@ def _tool_called(response):
     return True
 
 
-class DocumentGrader(llm_util.Assistant):
+class DocumentGrader(Assistant):
     def __init__(self, runnable):
         super().__init__(runnable)
 

@@ -1,6 +1,6 @@
 from langchain_core.pydantic_v1 import BaseModel, Field
 
-import llm_util
+from llm_util import Assistant
 
 
 class QueryTranslationTool(BaseModel):
@@ -9,7 +9,7 @@ class QueryTranslationTool(BaseModel):
     )
 
 
-class QueryTranslator(llm_util.Assistant):
+class QueryTranslator(Assistant):
     def __init__(self, runnable):
         super().__init__(runnable)
 

@@ -9,6 +9,7 @@ import requests
 import structlog
 
 import search_util
+from search_util import Article
 
 logger = structlog.get_logger(__name__)
 
@@ -174,7 +175,7 @@ def _scrape_article(url):
     resp.raise_for_status()
     soup = bs4.BeautifulSoup(resp.text, "html.parser")
     parser = PubMedParser(soup)
-    return search_util.Article.from_parser(parser, url)
+    return Article.from_parser(parser, url)
 
 
 def _scrape_articles(urls):

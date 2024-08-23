@@ -5,11 +5,11 @@ import structlog
 from langchain.schema import Document
 from langgraph.graph import END, StateGraph
 
-import document_grading as dg
+from document_grading import DocumentGrader, DocumentGradingTool
+from query_translation import QueryTranslator, QueryTranslationTool
 import document_search
 import llm_util
 import printing
-import query_translation as qt
 
 logger = structlog.get_logger(__name__)
 
@@ -36,14 +36,14 @@ class CitationFinder:
         document_grader_prompt = llm_util.read_system_prompt("document_grading.txt")
         # init query translator
         query_translator_runnable = llm_util.init_assistant_runnable(
-            query_translator_prompt, tools=qt.QueryTranslationTool, config=self.config
+            query_translator_prompt, tools=QueryTranslationTool, config=self.config
         )
-        query_translator = qt.QueryTranslator(query_translator_runnable)
+        query_translator = QueryTranslator(query_translator_runnable)
         # init document grader
         document_grader_runnable = llm_util.init_assistant_runnable(
-            document_grader_prompt, tools=dg.DocumentGradingTool, config=self.config
+            document_grader_prompt, tools=DocumentGradingTool, config=self.config
         )
-        document_grader = dg.DocumentGrader(document_grader_runnable)
+        document_grader = DocumentGrader(document_grader_runnable)
         # init document search
         doc_search_func = (
             lambda state: document_search.document_search(state, self.config)
