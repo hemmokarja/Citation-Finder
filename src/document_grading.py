@@ -24,7 +24,7 @@ class DocumentGradingTool(BaseModel):
         }
 
 
-def format_inputs(doc, input_sentence):
+def _format_inputs(doc, input_sentence):
     return (
         f"Document to grade:\n\n: {doc}\n\nUser's input sentence: {input_sentence}"
     )
@@ -44,7 +44,7 @@ class DocumentGrader(llm_util.Assistant):
         input_sentence = state["input_sentence"]
         filtered_docs = []
         for doc in state["docs"]:
-            inputs = format_inputs(doc.page_content, input_sentence)
+            inputs = _format_inputs(doc.page_content, input_sentence)
             response = self.invoke(inputs)
             if _tool_called(response):
                 tool_output = response.tool_calls[0]["args"]

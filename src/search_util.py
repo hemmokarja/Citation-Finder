@@ -38,3 +38,35 @@ def exception_handler(func):
             )
             return None
     return wrapper
+
+
+class Article:
+    def __init__(self, title, doi, publication_year, authors, abstract, texts, url):
+        self.title = title
+        self.doi = doi
+        self.publication_year = publication_year
+        self.authors = authors
+        self.abstract = abstract
+        self.texts = texts
+        self.url = url
+
+    def __repr__(self):
+        return (
+            f"<Article(title={self.title}, year={self.publication_year}, "
+            f"url={self.url})>"
+        )
+
+    def __hash__(self):
+        return hash((self.title, self.publication_year, tuple(self.authors)))
+
+    def __eq__(self, other):
+        if isinstance(other, Article):
+            return (
+                (self.title, self.publication_year, tuple(self.authors)) ==
+                (other.title, other.publication_year, tuple(other.authors))
+            )
+        return False
+
+    @classmethod
+    def from_parser(cls, parser, url):
+        return cls(**parser.parse_article(), url=url)
