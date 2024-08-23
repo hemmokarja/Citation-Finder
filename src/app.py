@@ -5,11 +5,11 @@ import structlog
 from langchain.schema import Document
 from langgraph.graph import END, StateGraph
 
-from document_grading import DocumentGrader, DocumentGradingTool
-from query_translation import QueryTranslator, QueryTranslationTool
 import document_search
 import llm_util
 import printing
+from document_grading import DocumentGrader, DocumentGradingTool
+from query_translation import QueryTranslationTool, QueryTranslator
 
 logger = structlog.get_logger(__name__)
 
