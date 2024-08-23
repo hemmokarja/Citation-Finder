@@ -106,9 +106,7 @@ def document_search(state, config):
     """
     query_strings = state["query_strings"]
     input_sentence = state["input_sentence"]
-    articles = pubmed.pubmed_document_search(
-        query_strings, config
-    )
+    articles = pubmed.pubmed_document_search(query_strings, config)
     docs = _generate_documents(articles)
     vectorstore = _set_up_vectorstore(docs)
     retriever = vectorstore.as_retriever(search_kwargs={"k": config.n_docs_retrival})
