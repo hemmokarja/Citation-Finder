@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "citation-finder"
+version = "0.1.0"
+description = ""
+authors = ["Hemmo Karja <hemmo.karja@sok.fi>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.9"
+beautifulsoup4 = "^4.12.3"
+langchain-openai = "^0.1.22"
+langchain-core = "^0.2.34"
+langgraph = "^0.2.11"
+langchain = "^0.2.14"
+langchain-community = "^0.2.12"
+chromadb = "^0.5.5"
+requests = "^2.32.3"
+structlog = "^24.4.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
