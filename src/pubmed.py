@@ -287,5 +287,5 @@ def pubmed_document_search(query_strings, config):
     for result in results:
         articles += result
     articles = list(set(articles))
-    logger.debug(f"Found and scraped {len(articles)} unique PMC articles in total")
+    logger.debug(f"Found and scraped {len(articles)} unique PubMed articles in total")
     return articles
