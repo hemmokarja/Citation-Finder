@@ -18,11 +18,11 @@ def _extract_article_metadata(article):
 
     Returns:
     dict: A dictionary containing the extracted metadata with keys:
-          - title: The title of the article (str).
-          - doi: The DOI (Digital Object Identifier) of the article (str).
-          - publication_year: The publication year of the article (str).
-          - authors: A semicolon-separated string of author names (str).
-          - url: The URL of the article (str).
+          - title (str): The title of the article.
+          - doi (str): The DOI (Digital Object Identifier) of the article.
+          - publication_year (int): The publication year of the article.
+          - authors (str): A semicolon-separated string of author names.
+          - url (str): The URL of the article.
     """
     title = article.title or "<UNK>"
     doi = article.doi or "<UNK>"
@@ -48,8 +48,8 @@ def _generate_documents(articles, min_length=200):
                       (default: 200).
 
     Returns:
-    list: A list of Document objects, each representing a single article text
-          (paragraph) with corresponding metadata.
+    list[Document]: A list of Document objects, each representing a single article text
+                    (paragraph) with corresponding metadata.
     """
     docs = []
     for article in articles:
@@ -94,7 +94,7 @@ def document_search(state, config):
                                                 relevant documents for.
     config (Config): A Config object containing:
                      - n_articles_per_query (int) : Number of aricles to retrieve per
-                                                    query string
+                                                    query string.
                      - n_docs_retrival (int): Number of top relevant documents to
                        retrieve from vector database.
                      - reset_vectorstore_after_retrieval (bool): Whether to reset the

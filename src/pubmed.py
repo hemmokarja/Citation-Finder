@@ -54,7 +54,7 @@ class PubMedParser:
 
         Parameters:
         soup (BeautifulSoup): A BeautifulSoup object containing the parsed HTML of the
-                            article.
+                              article.
 
         Returns:
         str: The DOI of the article.
@@ -68,7 +68,7 @@ class PubMedParser:
 
         Parameters:
         soup (BeautifulSoup): A BeautifulSoup object containing the parsed HTML of the
-                            article.
+                              article.
 
         Returns:
         int: The publication year of the article.
@@ -92,7 +92,7 @@ class PubMedParser:
 
         Parameters:
         soup (BeautifulSoup): A BeautifulSoup object containing the parsed HTML of the
-                            article.
+                              article.
 
         Returns:
         list[str]: A list of author names.
@@ -115,7 +115,7 @@ class PubMedParser:
 
         Parameters:
         soup (BeautifulSoup): A BeautifulSoup object containing the parsed HTML of the
-                            article.
+                              article.
 
         Returns:
         str or None: The abstract of the article as a single string, or None if no
@@ -141,7 +141,7 @@ class PubMedParser:
 
         Parameters:
         soup (BeautifulSoup): A BeautifulSoup object containing the parsed HTML of the
-                            article.
+                              article.
 
         Returns:
         list[str]: A list of strings, each representing a cleaned paragraph of text from
@@ -186,7 +186,8 @@ def _scrape_articles(urls):
     urls (list): A list of URLs to scrape articles from.
 
     Returns:
-    list: A list of Article objects created from the parsed HTML content of each URL.
+    list[Article]: A list of Article objects created from the parsed HTML content of
+                   each URL.
     """
     articles = []
     for url in urls:
