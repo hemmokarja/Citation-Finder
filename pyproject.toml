@@ -19,7 +19,6 @@ structlog = "^24.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
-ipykernel = "^6.29.5"
 isort = "^5.13.2"
 
 [build-system]

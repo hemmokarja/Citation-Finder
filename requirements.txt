@@ -1,0 +1,9 @@
+beautifulsoup4==4.12.3
+chromadb==0.5.5
+langchain==0.2.14
+langchain-community==0.2.12
+langchain-core==0.2.34
+langchain-openai==0.1.22
+langgraph==0.2.11
+requests==2.32.3
+structlog==24.4.0
