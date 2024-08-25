@@ -66,6 +66,7 @@ class CitationFinder:
 
     def search(self, input_sentence, return_mode="print"):
         assert return_mode in ["print", "return"]
+        logger.info(f"Searching citations for input sentence '{input_sentence}'")
         final_state = self.app.invoke({"input_sentence": input_sentence})
         if return_mode == "print":
             printing.print_output(final_state)
@@ -80,7 +81,10 @@ def _check_openai_env():
 
 def _set_langchain_env(config):
     if os.environ.get("LANGCHAIN_API_KEY") is None:
-        raise ValueError("Set `LANGCHAIN_API_KEY` as environment variable")
+        raise ValueError(
+            "Set `LANGCHAIN_API_KEY` as environment variable or set "
+            "`Config.use_langsmith` to False"
+        )
     if config.langchain_project is None:
         raise ValueError("`Config.langchain_project` cannot be None")
     if config.langchain_tracing_v2 is None:
