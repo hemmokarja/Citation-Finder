@@ -10,7 +10,7 @@ In scholarly contexts, providing a citation for your claims is essential. Howeve
 
 As of now, CitationFinder includes support only for the PubMed database.
 
-<PubMed is a free resource that primarily comprises MEDLINE, a database of references and abstracts on life sciences and biomedical topics. It is maintained by the National Center for Biotechnology Information (NCBI) at the U.S. National Library of Medicine (NLM). PubMed provides access to a vast repository of medical literature, including research articles, reviews, and clinical studies.>
+* PubMed is a free resource that primarily comprises MEDLINE, a database of references and abstracts on life sciences and biomedical topics. It is maintained by the National Center for Biotechnology Information (NCBI) at the U.S. National Library of Medicine (NLM). PubMed provides access to a vast repository of medical literature, including research articles, reviews, and clinical studies.
 
 (Including additional databases is primarily a matter of developing article scraping logic for these databases.)
 
@@ -37,10 +37,12 @@ Before running the application, you need to set up the required environment vari
 1. **OPENAI_API_KEY**: This is necessary to use the language models. You can set it up in your terminal as follows:
    ```bash
    export OPENAI_API_KEY='<your-openai-api-key>'
+   ```
 
 2. **LANGCHAIN_API_KEY**: This is required if you wish to use LangSmith for enhanced tracing and analysis. Set it up with:
    ```bash
    export LANGCHAIN_API_KEY='<your-langchain-api-key>'
+   ```
 
    Make sure to enable LangSmith usage in the configuration file by setting `use_langsmith` to `True`.
 
@@ -48,8 +50,15 @@ Before running the application, you need to set up the required environment vari
 
 You can manage dependencies using either Poetry or pip:
 
-* Using poetry: `poetry install`
-* Using pip: `pip install requirements.txt`
+* Using poetry
+  ```bash
+  poetry install
+  ```
+
+* Using pip
+   ```bash
+   pip install requirements.txt
+   ```
 
 ### Running the Application
 
