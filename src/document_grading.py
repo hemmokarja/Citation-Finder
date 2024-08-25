@@ -30,12 +30,6 @@ def _format_inputs(doc, input_sentence):
     )
 
 
-def _tool_called(response):
-    if not response.tool_calls:
-        return False
-    return True
-
-
 class DocumentGrader(Assistant):
     def __init__(self, runnable):
         super().__init__(runnable)
@@ -46,15 +40,15 @@ class DocumentGrader(Assistant):
         for doc in state["docs"]:
             inputs = _format_inputs(doc.page_content, input_sentence)
             response = self.invoke(inputs)
-            if _tool_called(response):
+            if response.tool_calls:
                 tool_output = response.tool_calls[0]["args"]
                 if tool_output["document_is_relevant"] == True:
                     doc.metadata["supporting_quote"] = tool_output["supporting_quote"]
                     filtered_docs.append(doc)
             else:
                 logger.warning(
-                    "DocumentGrader failed to call a tool, skipping grading of this "
-                    "document"
+                    "DocumentGrader failed to call DocumentGradingTool, skipping "
+                    "grading of this document"
                 )
         logger.debug(f"Graded {len(filtered_docs)} documents are relevant")
         return {"docs": filtered_docs}

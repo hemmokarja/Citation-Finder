@@ -17,6 +17,6 @@ class QueryTranslator(Assistant):
         input_sentence = state["input_sentence"]
         response = self.invoke(input_sentence)
         if not response.tool_calls:
-            raise RuntimeError("QueryTranslator failed to call a tool")
+            raise RuntimeError("QueryTranslator failed to call QueryTranslationTool")
         query_strings = response.tool_calls[0]["args"]["query_strings"]
         return {"query_strings": query_strings}
