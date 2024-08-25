@@ -1,6 +1,6 @@
 # CitationFinder
 
-CitationFinder is an application designed to streamline the process of finding academic citations by leveraging web scraping and large language models. It helps researchers, scholars, and students alike quickly locate supporting citations from academic literature, significantly reducing the time and effort required for this often cumbersome task.
+CitationFinder is an application designed to streamline the process of finding academic citations by leveraging large language models, RAG, and web scraping. It helps researchers, scholars, and students alike quickly locate supporting citations from academic literature, significantly reducing the time and effort required for this often surprisingly cumbersome task.
 
 ## Overview
 
@@ -100,7 +100,7 @@ The workflow of CitationFinder is as follows:
 6. **Vector Storage**: The vectors are stored in a vector database, allowing for efficient retrieval based on similarity search.
 7. **User Input Sentence Embedding**: The user's original input sentence is embedded into a vector.
 8. **Document Retrieval**: The application retrieves J (default: 10) documents from the vector database whose vectors most closely match the user's input sentence vector.
-9. **Citation Evaluation**: A language model evaluates each of the retrieved documents to determine whether it can be used as a direct and undeniable source for the user's input sentence.
+9. **Citation Evaluation**: A language model evaluates each of the retrieved documents to determine whether it can be used as a direct source for the user's input sentence. In addition, the LLM extracts the most relevant sentence or sentences from the paragraph.
 
 ## Usage Instructions
 
