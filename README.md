@@ -9,7 +9,7 @@ In scholarly contexts, providing a citation for your claims is essential. Howeve
 ### Example usage
 
 ```bash
-python main.py --input_sentence Covid 19 increased the likelihood of heart complications
+python main.py --input_sentence "Covid 19 increased the likelihood of heart complications"
 ```
 
 ```bash
