@@ -1,3 +1,5 @@
+import os
+
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.prompts.chat import MessagesPlaceholder
@@ -31,7 +33,8 @@ def init_assistant_runnable(system_prompt, tools, config):
 
 
 def read_system_prompt(filename):
-    path = "./src/prompts/" + filename
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(script_dir, "prompts", filename)
     with open(path, "r") as f:
         prompt = f.read()
     return prompt
