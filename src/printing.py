@@ -33,6 +33,7 @@ def print_output(state):
             "`n_docs_retrival` options. It is also possible that the input sentence "
             "may not be well-supported by academic literature"
         )
+        return
     for i, doc in enumerate(docs):
         print("=" * 43, f"[Citation {i+1}]", "=" * 43)
         print(_format_output(**doc.metadata))
