@@ -25,6 +25,14 @@ def _format_output(
 
 
 def print_output(state):
-    for i, doc in enumerate(state["docs"]):
+    docs = state["docs"]
+    if not docs:
+        print(
+            "CitationFinder failed to locate relevant quotes for the provided input "
+            "sentence. Consider expanding search with `n_articles_per_query` and "
+            "`n_docs_retrival` options. It is also possible that the input sentence "
+            "may not be well-supported by academic literature"
+        )
+    for i, doc in enumerate(docs):
         print("=" * 43, f"[Citation {i+1}]", "=" * 43)
         print(_format_output(**doc.metadata))
