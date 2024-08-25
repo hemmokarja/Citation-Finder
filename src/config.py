@@ -4,7 +4,7 @@ from typing import Optional
 
 @dataclass
 class Config:
-    n_articles_per_query: int = 5
+    n_articles_per_query: int = 10
     n_docs_retrival: int = 10
     model_name: str = "gpt-4o-2024-08-06"
     temperature: int = 0
