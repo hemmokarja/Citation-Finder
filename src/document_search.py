@@ -96,9 +96,10 @@ def document_search(state, config):
                      - n_articles_per_query (int) : Number of aricles to retrieve per
                                                     query string.
                      - n_docs_retrival (int): Number of top relevant documents to
-                       retrieve from vector database.
+                                              retrieve from vector database.
                      - reset_vectorstore_after_retrieval (bool): Whether to reset the
-                       vector store after retrieval.
+                                                                 vector store after
+                                                                 retrieval.
 
     Returns:
     GraphState: A GraphState object with a list of retrieved Document objects appended
