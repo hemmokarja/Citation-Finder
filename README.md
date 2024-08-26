@@ -2,11 +2,11 @@
 
 CitationFinder is an application designed to streamline the process of finding academic citations by leveraging large language models, RAG, and web scraping. It helps researchers, scholars, and students alike quickly locate supporting citations from academic literature, significantly reducing the time and effort required for this often surprisingly cumbersome task.
 
-(This project is intended primarily as a para-novelty experiment, designed to showcase and practice skills with LangChain. While it may have some real-world utility — such as helping to quickly locate relevant references for known concepts — the main goal was to explore and demonstrate the capabilities of automated language tools. Users should not treat this as a substitute for rigorous academic research, but rather as a creative exercise in leveraging AI for exploratory purposes.)
-
 ## Overview
 
 In scholarly contexts, providing a citation for your claims is essential. However, finding a suitable citation that perfectly matches your specific needs can be challenging. This application automates the process of searching for relevant articles, extracting pertinent information, and evaluating the quality of the citations.
+
+(Needless to say, actual research should work the other way around — that you construct your arguments from knowledge of prior literature; not that you find prior literature to support any arbitrary argument. This project is intended primarily as a para-novelty experiment, designed to showcase and practice skills with LangChain. While it may have some real-world utility, users should not treat this as a substitute for rigorous academic research.)
 
 ### Example usage
 
@@ -168,6 +168,6 @@ Please refer to the following flags for how to conifgure the application:
 - **`--langchain_endpoint`**: The API endpoint for LangChain (default: `"https://api.smith.langchain.com"`; only necessary if `reset_vectorstore == True`).
 - **`--langchain_user_agent`**: The user agent string for LangChain API requests (default: `"myagent"`; only necessary if `reset_vectorstore == True`).
 
-# License
+## License
 
 This project is licensed under the CC BY-NC 4.0 License. See the LICENSE file for details.
