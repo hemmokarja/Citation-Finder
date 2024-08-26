@@ -2,6 +2,8 @@
 
 CitationFinder is an application designed to streamline the process of finding academic citations by leveraging large language models, RAG, and web scraping. It helps researchers, scholars, and students alike quickly locate supporting citations from academic literature, significantly reducing the time and effort required for this often surprisingly cumbersome task.
 
+(This project is intended primarily as a para-novelty experiment, designed to showcase and practice skills with LangChain. While it may have some real-world utility — such as helping to quickly locate relevant references for known concepts — the main goal was to explore and demonstrate the capabilities of automated language tools. Users should not treat this as a substitute for rigorous academic research, but rather as a creative exercise in leveraging AI for exploratory purposes.)
+
 ## Overview
 
 In scholarly contexts, providing a citation for your claims is essential. However, finding a suitable citation that perfectly matches your specific needs can be challenging. This application automates the process of searching for relevant articles, extracting pertinent information, and evaluating the quality of the citations.
